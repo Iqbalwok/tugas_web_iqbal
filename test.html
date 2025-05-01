@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Daftar Fakultas dan Program Studi</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb;
+    margin: 0;
+    padding: 40px 20px;
+    color: #2c3e50;
+    text-align: center;
+  }
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px 40px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  }
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    /* initial background style */
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 10px;
+  }
+  section {
+    margin-bottom: 40px;
+  }
+  h2 {
+    font-size: 2rem;
+    color: #2980b9;
+    margin-bottom: 20px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  li {
+    margin-bottom: 20px;
+  }
+  li strong {
+    font-size: 1.2rem;
+    color: #34495e;
+  }
+  li p {
+    margin: 8px 0 0 0;
+    font-size: 1rem;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+  <main>
+    <h1 id="mainTitle">Daftar Fakultas dan Program Studi</h1>
+
+    <section>
+      <h2>Fakultas Ilmu Komputer</h2>
+      <ul>
+        <li>
+          <strong>Teknik Informatika</strong>
+          <p>Program studi yang mempelajari pengembangan perangkat lunak, algoritma, dan sistem komputer.</p>
+        </li>
+        <li>
+          <strong>Sistem Informasi</strong>
+          <p>Fokus pada pengelolaan dan penerapan sistem informasi dalam bisnis dan organisasi.</p>
+        </li>
+        <li>
+          <strong>Ilmu Komputer</strong>
+          <p>Studi teori, algoritma, dan teknologi komputer secara mendalam untuk berbagai aplikasi.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Fakultas Bisnis</h2>
+      <ul>
+        <li>
+          <strong>Manajemen</strong>
+          <p>Mempelajari pengelolaan organisasi, sumber daya, dan strategi bisnis.</p>
+        </li>
+        <li>
+          <strong>Akuntansi</strong>
+          <p>Fokus pada pencatatan, pelaporan, dan analisis keuangan perusahaan.</p>
+        </li>
+        <li>
+          <strong>Ekonomi</strong>
+          <p>Studi tentang produksi, distribusi, dan konsumsi barang dan jasa di masyarakat.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Fakultas Bisnis</h2>
+      <ul>
+        <li>
+          <strong>Marketing</strong>
+          <p>Pelajari strategi pemasaran produk dan jasa untuk memenuhi kebutuhan pasar.</p>
+        </li>
+        <li>
+          <strong>Keuangan</strong>
+          <p>Mempelajari pengelolaan dana, investasi, dan pasar keuangan dalam bisnis.</p>
+        </li>
+        <li>
+          <strong>Bisnis Digital</strong>
+          <p>Fokus pada teknologi digital dan inovasi dalam pengembangan usaha modern.</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+<script>
+  const h1 = document.getElementById('mainTitle');
+  const textLength = h1.textContent.replace(/\s+/g, '').length; // count letters ignoring spaces
+
+  // Create background color based on text length (mapping length to hue value)
+  // Max letters is about 30-40? We'll clamp it.
+  const maxLength = 40;
+  const lengthClamped = Math.min(textLength, maxLength);
+
+  // Map length to hue between 180 to 360 (blue to red)
+  const hue = 180 + (lengthClamped / maxLength) * 180;
+
+  h1.style.background = `hsl(${hue}, 70%, 50%)`;
+  h1.style.color = '#fff';
+  h1.style.paddingLeft = '15px';
+  h1.style.paddingRight = '15px';
+</script>
+</body>
+</html>
